@@ -1,13 +1,15 @@
 apiVersion: api.cerbos.dev/v1
 resourcePolicy:
   version: "default"
-resource: "admin_edit"
-  kind: "document"
-  actions: ["edit"]
-principals:
-  - admin
-  - user
-rules:
-  - actions: ["edit"]
-    effect: EFFECT_ALLOW
-    roles: ["admin"]
+  resource: "document"
+  rules:
+    - actions:
+        - edit
+      effect: EFFECT_ALLOW
+      roles:
+        - admin
+    - actions:
+        - view
+      effect: EFFECT_ALLOW
+      roles:
+        - admin
