@@ -9,7 +9,8 @@ resourcePolicy:
       roles:
         - admin
       condition:
-        expr: "time.now().hour >= 20"
+        match:
+          expr: "time.now().hour >= 20"
     - actions:
         - view
       effect: EFFECT_ALLOW
