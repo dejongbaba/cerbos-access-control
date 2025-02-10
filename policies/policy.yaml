@@ -10,7 +10,7 @@ resourcePolicy:
         - admin
       condition:
         match:
-          expr: "time.now().hour >= 20"
+        expr: "request.time.getHours() >= 20"
     - actions:
         - view
       effect: EFFECT_ALLOW
