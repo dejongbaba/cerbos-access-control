@@ -8,6 +8,8 @@ resourcePolicy:
       effect: EFFECT_ALLOW
       roles:
         - admin
+      condition:
+        expr: "time.now().hour >= 20"
     - actions:
         - view
       effect: EFFECT_ALLOW
