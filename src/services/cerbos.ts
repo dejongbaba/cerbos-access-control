@@ -8,7 +8,9 @@ const checkAccess = async (user, resource, action) => {
             principal: {
                 id: user.id,
                 roles: user.roles,
-                requestTime: currentTime, // Include user's current time
+                attr:{
+                    requestTime: 24, // Include user's current time
+                }
             },
             resources:[
                 {actions: [action],
